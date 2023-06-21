@@ -1,0 +1,60 @@
+{{!-- https://codepen.io/mamislimen/pen/jOwwLvy :- Template Link --}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Delete Student</title>
+    <link rel="shortcut icon" href="https://img.icons8.com/avantgarde/512/planner.png" type="image/x-icon"
+        sizes="120x120">
+    <link rel="stylesheet" type="text/css" href="reg_form.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true" />
+
+        <div class="signup">
+            <form action="/admindeletestudent">
+                <label for="chk" aria-hidden="true">Delete Data</label>
+                <input type="number" name="phone_number" placeholder="Phone Number" required="" autocomplete="none" />
+
+                <p>
+                    <select name="event_name" id="Event Name">
+                        <option value="">Select Event Name</option>
+                        <option value="Valowarz">Valowarz</option>
+                        <option value="Design-O-Code">Design-O-Code</option>
+                        <option value="Craken">Craken</option>
+                    </select>
+                </p>
+
+                <button>Delete Data</button>
+                {{#if dmesg1}}
+                <h3>Data Deleted Successfully..!</h3>
+                {{/if}}
+                {{#if dmesg2}}
+                <h3 style="color: red;">DATA NOT FOUND..!!</h3>
+                {{/if}}
+            </form>
+
+        </div>
+
+    </div>
+    <div class="back">
+        <h3><a href="/adminindex">&#60;-- Go Back</a></h3>
+    </div>
+</body>
+
+<script>function cdn(true) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            footer: '<a href="">Why do I have this issue?</a>'
+        })
+    }
+
+</script>
+
+</html>
